@@ -67,3 +67,39 @@ def getRes(stavka):
             d4 = 0
         if (d5 > 9):
             d5 = 0
+
+        if(random.randint(0,20) == 1):
+            getD1 = False
+        if (random.randint(0, 20) == 1):
+            getD2 = False
+        if (random.randint(0, 20) == 1):
+            getD3 = False
+        if (random.randint(0, 20) == 1):
+            getD4 = False
+        if (random.randint(0, 20) == 1):
+            getD5 = False
+
+        time.sleep(0.1)
+        col +=1
+        if(col > 15):
+            col = 10
+        print("   " + "%" * 10)
+        print(f"{d1} {d2} {d3} {d4} {d5}")
+
+    maxCount = getMaxCount(d1,d1,d2,d3,d4,d5)
+    if(maxCount == 2):
+        print(f"овпадение двух чисел. Твой выйгрыш {res}")
+    elif(maxCount == 3):
+        res *= 2
+        print(f"Совпадение трех чисел. Твой выйгрыш {res}")
+    elif (maxCount == 4):
+        res *= 5
+        print(f"Совпадение четырех чисел. Твой выйгрыш {res}")
+    elif (maxCount == 5):
+        res *= 10
+        print(f"Совпадение всех чисел. Твой выйгрыш {res}")
+
+    else:
+        lose(res)
+        input("Нажми enter")
+        return res
