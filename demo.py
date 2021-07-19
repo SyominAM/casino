@@ -266,5 +266,5 @@ def main():
     else:
         print("you lose")
 
-main()
+main()# вызов
 
